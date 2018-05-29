@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="description" content="todo - This website is awesome"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" type="image/x-icon" href="img.ico">
+  <meta property="og:title" content="Title">
+  <meta property="og:description" content="todo - This website is awesome">
+  <meta name="twitter:title" content="Title">
+  <meta name="twitter:description" content="todo - This website is awesome">
+  <meta property="og:image" content="screen.png">
+  <meta name="twitter:image" content="screen.png">
+  <meta name="image" content="screen.png">
+	<meta property="og:url" content="https://site.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://site.com/">
+  <meta name="url" content="https://site.com/">
+	<link href="https://site.com/" rel="canonical">
+	<link rel="stylesheet" href="./css/app.min.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="task__wrapper">
+
+    <div class="task"></div>
+
+    <div class="summary">
+      Total is <span></span>
+    </div>
+
+    <h3>What is the <span>y</span>?</h3>
+    <div class="flex__row">
+      <div class="form-group">
+        <div class="input-group">
+          <input id='checkNumber' type="text" class="form-control" />
+        </div>
+      </div>
+      <button type="submit" id='checkBtn' class="btn btn-default">Check</button>
+    </div>
+
+    <div class="btn-wrapper">
+      <div class="btn btn-primary refreshBtn">Refresh the numbers</div>
+
+    </div>
+  </div>
+
+  <div id="modalSuccess" class="modal__window">
+    <div class="modal__title">
+      Well done
+      <span>
+        🏆
+      </span>
+    </div>
+    <button class="my-btn" type="button">One more time <span>😍</span></button>
+  </div>
+
+  <div id="modalLoose" class="modal__window">
+    <div class="modal__title">
+      So sorry
+      <div class="modal__title">
+        you've made a mistake
+      </div>
+      <span>
+        😰
+      </span>
+    </div>
+    <div class="btn__wrapper">
+      <button class="my-btn" type="button">One more time <span>🤓</span></button>
+      <button class="my-btn" type="button">New numbers <span>😉</span></button>
+    </div>
+
+  </div>
+  <div class="modal__overlay">
+
+  </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+</html>
