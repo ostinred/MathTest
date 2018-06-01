@@ -94,11 +94,13 @@ h3 {
   left: 0;
   @include size(100%);
   background-color: rgba(0,0,0,.75);
+  @include modal-open-animation;
 }
 
 .modal__window {
-  max-width: 600px;
-  padding: 60px 80px 30px;
+  position: relative;
+  width: 600px;
+  padding: 80px 0 55px;
   @include absolute(50% null null 50%);
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -108,6 +110,21 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include modal-open-animation;
+
+  @include desktop {
+    width: 600px;
+  }
+
+  .btn__wrapper {
+    display: flex;
+
+    .my-btn {
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
 .modal__title {
@@ -119,13 +136,15 @@ h3 {
 
   span {
     display: block;
-    padding: 30px 0 40px;
-    font-size: 60px;
+    //padding: 20px 0 10px;
+    font-size: 80px;
   }
 }
 
 .my-btn {
-  @include flex-center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   font-size: 20px;
   padding: 10px 20px;
   border: none;
@@ -133,8 +152,45 @@ h3 {
   background-color: #cccccc;
   cursor: pointer;
 
+  @include desktop {
+    width: 240px;
+  }
+
   span {
     font-size: 30px;
     padding-left: 10px;
+  }
+}
+
+.btn__wrapper {
+  margin-top: 20px;
+}
+
+.my-btn-close {
+  @include absolute(30px 30px null null);
+  @include reset-btn-styles;
+
+  @include desktop {
+    &:hover {
+      svg {
+        transform: rotate(90deg);
+        transition: transform .25s;
+      }
+    }
+  }
+
+  svg {
+    @include size(50px);
+  }
+}
+
+.btn-default {
+  transition: opacity $a-transition-base;
+  pointer-events: auto;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: .75;
+    cursor: not-allowed;
   }
 }

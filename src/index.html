@@ -40,26 +40,40 @@
           <input id='checkNumber' type="text" class="form-control" />
         </div>
       </div>
-      <button type="submit" id='checkBtn' class="btn btn-default">Check</button>
+      <button type="submit" id='checkBtn' class="my-btn btn-default ">Check</button>
     </div>
 
-    <div class="btn-wrapper">
-      <div class="btn btn-primary refreshBtn">Refresh the numbers</div>
-
+    <div class="btn__wrapper">
+      <div class="my-btn refreshBtn">Refresh the numbers</div>
     </div>
   </div>
 
-  <div id="modalSuccess" class="modal__window">
+  <div id="modalWin" class="modal__window">
+    <button type="button" class="my-btn-close btn-close-modal">
+      <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M50,49.2928932 L107.58041,-8.2875172 L107.933964,-8.64107059 L108.641071,-7.93396381 L108.287517,-7.58041042 L50.7071068,50 L103.858226,103.151119 L104.21178,103.504673 L103.504673,104.21178 L103.151119,103.858226 L50,50.7071068 L-7.14644661,107.853553 L-7.5,108.207107 L-8.20710678,107.5 L-7.85355339,107.146447 L49.2928932,50 L-3.85355339,-3.14644661 L-4.20710678,-3.5 L-3.5,-4.20710678 L-3.14644661,-3.85355339 L50,49.2928932 Z" id="Combined-Shape" fill="#000000"></path>
+        </g>
+      </svg>
+    </button>
+
     <div class="modal__title">
       Well done
       <span>
         🏆
       </span>
     </div>
-    <button class="my-btn" type="button">One more time <span>😍</span></button>
+    <button class="my-btn refreshBtn btn-close-modal" type="button">One more time <span>😍</span></button>
   </div>
 
   <div id="modalLoose" class="modal__window">
+    <button type="button" class="my-btn-close btn-close-modal">
+      <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M50,49.2928932 L107.58041,-8.2875172 L107.933964,-8.64107059 L108.641071,-7.93396381 L108.287517,-7.58041042 L50.7071068,50 L103.858226,103.151119 L104.21178,103.504673 L103.504673,104.21178 L103.151119,103.858226 L50,50.7071068 L-7.14644661,107.853553 L-7.5,108.207107 L-8.20710678,107.5 L-7.85355339,107.146447 L49.2928932,50 L-3.85355339,-3.14644661 L-4.20710678,-3.5 L-3.5,-4.20710678 L-3.14644661,-3.85355339 L50,49.2928932 Z" id="Combined-Shape" fill="#000000"></path>
+        </g>
+      </svg>
+    </button>
     <div class="modal__title">
       So sorry
       <div class="modal__title">
@@ -70,14 +84,12 @@
       </span>
     </div>
     <div class="btn__wrapper">
-      <button class="my-btn" type="button">One more time <span>🤓</span></button>
-      <button class="my-btn" type="button">New numbers <span>😉</span></button>
+      <button class="my-btn btn-close-modal" type="button">One more time <span>🤓</span></button>
+      <button class="my-btn refreshBtn btn-close-modal" type="button">New numbers <span>😉</span></button>
     </div>
 
   </div>
-  <div class="modal__overlay">
-
-  </div>
+  <div class="modal__overlay"></div>
 </div>
 
 

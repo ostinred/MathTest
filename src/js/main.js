@@ -1,5 +1,10 @@
 $(document).ready(function(){
   var $body = $('body');
+  var $modalOverlay = $('.modal__overlay');
+  var $modalWindow = $('.modal__window');
+  var $modalCloseBtn = $('.btn-close-modal');
+  var $modalLoose = $('#modalLoose');
+  var $modalWin = $('#modalWin');
 
   var $n1 = $('#number1 span');
   var $n2 = $('#number2 span');
@@ -35,28 +40,55 @@ $(document).ready(function(){
 
   $('#checkBtn').on('click', function() {
     if($('#checkNumber').val() == y) {
-
-      alert('Well done. You are right');
+      openModal();
+      $modalWin.addClass('is-active');
     } else {
-      alert('Sorry. You\'ve made a mistake');
+      openModal();
+      $modalLoose.addClass('is-active');
     }
   });
+
+  function removeValue() {
+    $('#checkNumber').val('');
+  }
 
   $('.refreshBtn').on('click', function() {
     createNumbers();
     compareNumbers();
+    removeValue();
     console.log(x,y);
   });
 
+  function openModal() {
+    $body.addClass('is-fixed');
+    $modalOverlay.addClass('is-active');
+  }
 
+  function closeModal() {
+    $body.removeClass('is-fixed');
+    $modalOverlay.removeClass('is-active');
+    $modalWindow.removeClass('is-active');
+    removeValue();
+  }
 
+  $modalOverlay.on('click', function () {
+    closeModal();
+  });
 
+  $modalCloseBtn.on('click', function () {
+    closeModal();
+  });
+
+  $('#checkBtn').addClass('disabled');
+
+  $('#checkNumber').change(function(){
+    var validated = true;
+
+    if($('#checkNumber').val().length === 0){
+      validated = false;
+    }
+    if(validated) {
+      $('#checkBtn').removeClass("disabled");
+    }
+  });
 });
-
-// $(document).on('click', 'a[href^="#"]', function (event) {
-//   event.preventDefault();
-//
-//   $('html, body').animate({
-//     scrollTop: $($.attr(this, 'href')).offset().top
-//   }, 500);
-// });

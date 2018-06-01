@@ -374,5 +374,20 @@ $desktop-2k:    2400px !default;
   background: transparent;
   box-shadow: none;
   -webkit-appearance: none;
+
+  @include desktop {
+    cursor: pointer;
+  }
 }
 //@include reset-btn-styles;
+
+@mixin modal-open-animation {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $a-transition-base;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
